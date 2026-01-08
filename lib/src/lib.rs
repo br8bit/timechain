@@ -1,14 +1,11 @@
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
-}
+pub mod crypto;
+pub mod sha256;
+pub mod types;
+pub mod utils;
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+use uint::construct_uint;
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
+construct_uint! {
+    /// 256-bit unsigned integer.
+    pub struct u256(4);
 }
